@@ -8,7 +8,7 @@ import Greet from './Greet';
 //     expect(testGreet).toBeInTheDocument();
 // })
 
-// test('greeting props', () =>{
+// test('greeting name props', () =>{
 //     render(<Greet name='Akash'/>);
 //     // const testGreetProps = screen.getByText(/Hello Akash/); regex 
 //     const testGreetProps = screen.getByText('Hello Akash'); // we can define string like this or use regular expression(regex) like above 
@@ -21,14 +21,21 @@ import Greet from './Greet';
 
 //? Topics
 //! 1] To run 'only' particular Test Case or To 'skip' particular Test Case 
+//* i) only ii) skip
 // test.only('greeting component test', () =>{ //todo: it will only run this Test Case and skip all other Tests Cases
 // test.skip('greeting component test', () =>{ //todo: it will only skip this Test Case and run all other Test Cases
 
 //! 2] Grouping multiple Test Cases into one Test Case Using 'describe()'
+//* i) describe() 
 describe('Greet', ()=>{
     test('component test', ()=>{
         render(<Greet/>);
         const testGreet = screen.getByText('Hello');
         expect(testGreet).toBeInTheDocument();
+    })
+    test('name props', ()=>{
+            render(<Greet name='Akash'/>);
+    const testGreetProps = screen.getByText('Hello Akash');  
+    expect(testGreetProps).toBeInTheDocument(); 
     })
 });
