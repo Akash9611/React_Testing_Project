@@ -37,7 +37,7 @@ it('greeting name props', () =>{
 // test.only('greeting component test', () =>{ //todo: it will only run this Test Case and skip all other Tests Cases
 // test.skip('greeting component test', () =>{ //todo: it will only skip this Test Case and run all other Test Cases
 
-////! alternative of only and skip with 'it()' method
+////! alternative of 'only' and 'skip' with 'it()' method
 ////* i) fit (only) ii) xit (skip)
 // fit('greeting component test', () =>{
 //     render(<Greet/>);
