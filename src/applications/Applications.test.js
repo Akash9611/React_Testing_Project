@@ -22,7 +22,7 @@ describe('Application', () => {
     test('All fileds', () => {
         render(<Applications />);
         
-        //?getByRole Options
+        //?getByRole Options[name, level, hidden, selected, checked]
         //todo: 1] 'name' option
         // //!h1
         // const headingElement1 = screen.getByRole('heading', { name: 'Applications Submit Form' });//if we have a multiple headings tag then we should have to define the 'name' option(else test will fail) in the getByRole() and pass the text inside of the heading to the option;
