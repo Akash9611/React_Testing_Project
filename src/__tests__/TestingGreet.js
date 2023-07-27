@@ -16,3 +16,4 @@ test('greeting name props', () =>{
     const testGreetProps = screen.getByText('Hello Akash'); //string
     expect(testGreetProps).toBeInTheDocument(); 
 })
+    
