@@ -48,6 +48,7 @@ const Applications = () => {
                     <textarea id='bio' name='bio' /> {/*input text2 It is same as input text in react */}
                 </div>
                 <div>
+                    {/* <label htmlFor="job-location">Name</label> */} {/*if the same label name */}
                     <label htmlFor="job-location">Job-Location</label>
                     <select id="job-Location">
                         <option value="">select job-location</option>

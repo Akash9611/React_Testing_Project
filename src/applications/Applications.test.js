@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import Applications from './Applications';
 
 describe('Application', () => {
+    //!##################### getByRole ################################
     //!Applications Code 1
     // test('All fileds', () => {
     //     render(<Applications />);
@@ -21,7 +22,7 @@ describe('Application', () => {
     //!Applications Code 2
     test('All fileds', () => {
         render(<Applications />);
-        
+
         //?getByRole Options[name, level, hidden, selected, checked]
         //todo: 1] 'name' option
         // //!h1
@@ -34,11 +35,11 @@ describe('Application', () => {
 
         //todo: 2]'level' option
         //h1
-        const headingElement1 = screen.getByRole('heading', { level:1 });//if we have a multiple headings tag then we should have to define the 'level' option(else test will fail) in the getByRole() and level as number(level option accept only 6 level);
+        const headingElement1 = screen.getByRole('heading', { level: 1 });//if we have a multiple headings tag then we should have to define the 'level' option(else test will fail) in the getByRole() and level as number(level option accept only 6 level);
         expect(headingElement1).toBeInTheDocument();
 
         //h2
-        const headingElement2 = screen.getByRole('heading', {level:2});
+        const headingElement2 = screen.getByRole('heading', { level: 2 });
         expect(headingElement2).toBeInTheDocument();
 
         //Name input
@@ -58,6 +59,18 @@ describe('Application', () => {
 
         const buttonElement = screen.getByRole('button'); // checking button is present
         expect(buttonElement).toBeInTheDocument();
+
+
+        //!##################### getByLabelText ################################
+        const nameElement2 = screen.getByLabelText('Name')
+        expect(nameElement2).toBeInTheDocument();
+        
+        // const nameElement3 = screen.getByLabelText('Name', { selector: 'input'}) // If the label with same name then we use 'selector' option of getByLabelText method [selector takes Tag name as argument] 
+        // expect(nameElement3).toBeInTheDocument();
+
+        const termsElement = screen.getByLabelText('I agree to the terms and conditions');
+        expect(termsElement).toBeInTheDocument();
+
     })
 
 })
