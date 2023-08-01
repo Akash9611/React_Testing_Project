@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react"
+import { logRoles, render, screen } from "@testing-library/react"
 import Skill from "./Skill"
 
 describe("Skill Component", () => {
@@ -42,11 +42,20 @@ describe("Skill Component", () => {
     })
 
     //!###### Debugging #########
+    // test("Debug code of start learning button", async () => {
+    //     render(<Skill skills={skills} />)
+    //     screen.debug();// this will show the code in terminal before () start leaning button
+    //     const learningButton2 = await screen.findByRole('button', { name: 'start learning' }, { timeout: 2000 }); 
+    //     screen.debug()// this will show the code in terminal after () start leaning button
+    //     expect(learningButton2).toBeInTheDocument();
+    // })
+
+    //!###### logRole() => To see All the implicit Roles present in the code###
     test("Debug code of start learning button", async () => {
-        render(<Skill skills={skills} />)
-        screen.debug();// this will show the code in terminal before () start leaning button
+       const view= render(<Skill skills={skills} />)
+       logRoles(view.container) // to see/debug all the roles present in the html code 
         const learningButton2 = await screen.findByRole('button', { name: 'start learning' }, { timeout: 2000 }); 
-        screen.debug()// this will show the code in terminal after () start leaning button
         expect(learningButton2).toBeInTheDocument();
     })
+
 })
