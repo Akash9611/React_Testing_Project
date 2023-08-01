@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 //!Applications Code 1
 // import React from "react";
 // const Applications = () => {
@@ -38,11 +39,14 @@ const Applications = () => {
         <>
             <h1>Applications Submit Form </h1> {/*heading 1 */}
             <h2>Sections</h2> {/*heading 2 */}
-            <p>Hello, Welcome to Testing Tutorials</p>
+            <span title="close">X</span> {/* getByTitle */}
+            <p>Hello, Welcome to Testing Tutorials</p>{/* getByParagraph */}
+            <img src="https://images.freeimages.com/clg/images/31/311968/free-vector-summer-beach-image_f.jpg" alt="user profile image" />{/* getByAltText */}
+            <div data-testid="custom-test">CUSTOM HTML ELEMENT</div>
             <form>
                 <div>
                     <label htmlFor="name">Name</label>
-                    <input type="text" id="name" /> {/*input text 1 */}
+                    <input type="text" id="name" value="Akash" onChange={() => { }} /> {/*input text 1 */}
                 </div>
                 <div>
                     <label htmlFor="bio">Bio</label>

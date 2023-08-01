@@ -80,6 +80,29 @@ describe('Application', () => {
         const paragraphElement = screen.getByText("Hello, Welcome to Testing Tutorials") //options=[i)selector, for ex=>{selector: tagName"}]
         expect(paragraphElement).toBeInTheDocument();
 
+        const paragraphElement1 = screen.getByText("Welcome to Testing Tutorials", { exact: false }) //Substring matching exact option
+        expect(paragraphElement1).toBeInTheDocument();
+
+        const paragraphElement2 = screen.getByText(/Testing Tutorials/i) //Substring matching regex
+        expect(paragraphElement2).toBeInTheDocument();
+
+        const paragraphElement3 = screen.getByText(/^Hello, Welcome to Testing Tutorials$/i) //Full-string matching regex
+        expect(paragraphElement3).toBeInTheDocument();
+
+        //!##################### getByDisplayValue ################################
+        const nameElement4 = screen.getByDisplayValue("Akash");
+        expect(nameElement4).toBeInTheDocument();
+
+        //!##################### getByAltText ################################
+        const imageElement = screen.getByAltText("user profile image")
+
+        //!##################### getByTitle################################
+        const closeElement = screen.getByTitle("close");
+        expect(closeElement).toBeInTheDocument();
+
+        //!##################### getByTestId################################
+        const divElement = screen.getByTestId("custom-test");
+        expect(divElement).toBeInTheDocument();
     })
 
 })
