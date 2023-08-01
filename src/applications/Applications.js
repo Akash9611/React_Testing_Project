@@ -38,6 +38,7 @@ const Applications = () => {
         <>
             <h1>Applications Submit Form </h1> {/*heading 1 */}
             <h2>Sections</h2> {/*heading 2 */}
+            <p>Hello, Welcome to Testing Tutorials</p>
             <form>
                 <div>
                     <label htmlFor="name">Name</label>
@@ -45,7 +46,7 @@ const Applications = () => {
                 </div>
                 <div>
                     <label htmlFor="bio">Bio</label>
-                    <textarea id='bio' name='bio' /> {/*input text2 It is same as input text in react */}
+                    <textarea id='bio' name='bio' placeholder="FullName" /> {/*input text2 It is same as input text in react */}
                 </div>
                 <div>
                     {/* <label htmlFor="job-location">Name</label> */} {/*if the same label name */}

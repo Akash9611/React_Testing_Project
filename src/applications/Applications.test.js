@@ -62,14 +62,23 @@ describe('Application', () => {
 
 
         //!##################### getByLabelText ################################
-        const nameElement2 = screen.getByLabelText('Name')
+        const nameElement2 = screen.getByLabelText("Name")
         expect(nameElement2).toBeInTheDocument();
-        
-        // const nameElement3 = screen.getByLabelText('Name', { selector: 'input'}) // If the label with same name then we use 'selector' option of getByLabelText method [selector takes Tag name as argument] 
-        // expect(nameElement3).toBeInTheDocument();
+
+        // const nameElement2 = screen.getByLabelText("Name", { selector: "input",}) // If the label with same name then we use 'selector' option of getByLabelText method [selector takes Tag name as argument] 
+        // expect(nameElement2).toBeInTheDocument();
 
         const termsElement = screen.getByLabelText('I agree to the terms and conditions');
         expect(termsElement).toBeInTheDocument();
+
+        //!##################### getByPlaceholder ################################
+
+        const nameElement3 = screen.getByPlaceholderText("FullName");
+        expect(nameElement3).toBeInTheDocument();
+
+        //!##################### getByText ################################
+        const paragraphElement = screen.getByText("Hello, Welcome to Testing Tutorials") //options=[i)selector, for ex=>{selector: tagName"}]
+        expect(paragraphElement).toBeInTheDocument();
 
     })
 
