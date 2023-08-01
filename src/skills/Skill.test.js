@@ -24,10 +24,20 @@ describe("Skill Component", () => {
         expect(loginButton).toBeInTheDocument();
     })
     //!### queryBy()
-    test("start learning button [not present DOM element]",()=>{
+    test("start learning button [not present DOM element]", () => {
         render(<Skill skills={skills} />)
         const learningButton = screen.queryByRole('button', { name: 'start learning' });
-        expect(learningButton).not.toBeInTheDocument();
+        expect(learningButton).not.toBeInTheDocument(); // need to use 'not' also
     })
 
+
+    //!###### findBy() and findByAll() ####
+    //! use when the element is appear or disappear after some time; this method is asynchronous method so need to use async and await;
+    //?findBy() & findByAll() have default timeout as 1000 milliseconds 
+    //Example- data that is fetched from a server will be rendered only after a few milliseconds
+    test("start learning button [get present DOM element after some time]", async () => {
+        render(<Skill skills={skills} />)
+        const learningButton = await screen.findByRole('button', { name: 'start learning' }, { timeout: 2000 }); // if the element get present after 1000 milliseconds then add the timeout and increase the timeStamp
+        expect(learningButton).toBeInTheDocument(); // need to use 'not' also
+    })
 })
