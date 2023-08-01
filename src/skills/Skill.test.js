@@ -40,4 +40,13 @@ describe("Skill Component", () => {
         const learningButton = await screen.findByRole('button', { name: 'start learning' }, { timeout: 2000 }); // if the element get present after 1000 milliseconds then add the timeout and increase the timeStamp
         expect(learningButton).toBeInTheDocument(); // need to use 'not' also
     })
+
+    //!###### Debugging #########
+    test("Debug code of start learning button", async () => {
+        render(<Skill skills={skills} />)
+        screen.debug();// this will show the code in terminal before () start leaning button
+        const learningButton2 = await screen.findByRole('button', { name: 'start learning' }, { timeout: 2000 }); 
+        screen.debug()// this will show the code in terminal after () start leaning button
+        expect(learningButton2).toBeInTheDocument();
+    })
 })
