@@ -80,14 +80,17 @@ describe('Application', () => {
         const paragraphElement = screen.getByText("Hello, Welcome to Testing Tutorials") //options=[i)selector, for ex=>{selector: tagName"}]
         expect(paragraphElement).toBeInTheDocument();
 
-        const paragraphElement1 = screen.getByText("Welcome to Testing Tutorials", { exact: false }) //Substring matching exact option
+        const paragraphElement1 = screen.getByText("Welcome to Testing Tutorials", { exact: false }) //!Substring matching exact option
         expect(paragraphElement1).toBeInTheDocument();
 
-        const paragraphElement2 = screen.getByText(/Testing Tutorials/i) //Substring matching regex
+        const paragraphElement2 = screen.getByText(/Testing Tutorials/i) //!Substring matching regex
         expect(paragraphElement2).toBeInTheDocument();
 
-        const paragraphElement3 = screen.getByText(/^Hello, Welcome to Testing Tutorials$/i) //Full-string matching regex
+        const paragraphElement3 = screen.getByText(/^Hello, Welcome to Testing Tutorials$/i) //!Full-string matching regex
         expect(paragraphElement3).toBeInTheDocument();
+
+        const paragraphElement4 = screen.getByText((content)=> content.startsWith("Hello")) //!Substring matching using 'TextMatch' functionality
+        expect(paragraphElement4).toBeInTheDocument();
 
         //!##################### getByDisplayValue ################################
         const nameElement4 = screen.getByDisplayValue("Akash");
