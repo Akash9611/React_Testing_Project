@@ -7,13 +7,15 @@ import AppProvider from './provider/app-provider';
 
 function App() {
   return (
+       
+    //   <div className="App">
+    //     <Applications/>
+    //     <Skill/>
+    //     <Count/> 
+    //  </div>
+      //! ### Testing with App providers
     <AppProvider>
       <div className="App">
-        {/* 
-        <Applications/>
-        <Skill/>
-        <Count/> 
-     */}
         <MuiMode />
       </div>
     </AppProvider>
