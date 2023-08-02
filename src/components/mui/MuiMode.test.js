@@ -1,4 +1,4 @@
-//!Method 1 
+//!Method 1- using Wrapper option
 // import { render, screen } from '@testing-library/react';
 // import AppProvider from '../../provider/app-provider';
 // import MuiMode from './MuiMode';
@@ -12,7 +12,7 @@
 
 // })
 
-//! Method 2- Test getting AppProvider predefined to wrapper with test and options from ['test-utils.js'] file 
+//! Method 2- using Custom Render -Test getting AppProvider predefined to wrapper with test and options from ['test-utils.js'] file 
 import { render, screen } from '../../test-utils' //make sure to import methods from test-utils.js file
 import MuiMode from './MuiMode';
 
