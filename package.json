@@ -49,5 +49,8 @@
         "statements": -10
       }
     }
+  },
+  "devDependencies": {
+    "msw": "^1.2.3"
   }
 }
